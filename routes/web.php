@@ -10,7 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/','PagesController@inicio');
+Route::get('/messages/{message}', 'MessagesController@show');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+Route::post('/messages/create', 'MessagesController@create')->middleware('auth');
+//
+// Route::get('/{username}','UsersController@show');
+//
+// Route::get('/{username}', 'UsersController@follows');
+//
+// Route::post('/{username}/follow', 'UsersController@follow')
+// ->middleware('auth');
