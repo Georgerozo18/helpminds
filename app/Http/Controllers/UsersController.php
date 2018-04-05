@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Http\Request;
 class UsersController extends Controller
 {
     public function show($username){
@@ -19,6 +19,16 @@ class UsersController extends Controller
 
       return view('users.follows',[
         'user' => $user,
+        'follows' => $user->follows,
+      ]);
+    }
+
+    public function followers($username){
+      $user = $this->findByUsername($username);
+
+      return view('users.follows',[
+        'user' => $user,
+        'follows' => $user->followers,
       ]);
     }
 
@@ -27,12 +37,20 @@ class UsersController extends Controller
       $me = $request->user();
       $me->follows()->attach($user);
 
-      return redirect("/ $username")->withSuccess('Usuario Seguido!');
+      return redirect("/$username")->withSuccess('Usuario Seguido!');
+    }
+
+    public function unfollow($username, Request $request){
+      $user = $this->findByUsername($username);
+      $me = $request->user();
+      $me->follows()->detach($user);
+
+      return redirect("/$username")->withSuccess('Usuario no Seguido!');
     }
 
 
 
     private function findByUsername($username){
-        $user = User::where('username', $username)->first();
+        return User::where('username', $username)->first();
     }
 }

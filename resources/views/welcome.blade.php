@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="jumbotron text-center">
-    <h1>Are you ready to become in professional ?</h1>
-    <nav>
+  <div class="jumbotron jumbotron-fluid text-center bg-light">
+    <h1>Experiencias pedagógicas UPN </h1>
+    <nav class="navbar navbar-dark bg-dark">
       <ul class="nav nav-pills">
         <li class="nav-item">
           <a href="/" class="nav-link">Inicio</a>
@@ -11,21 +11,35 @@
       </ul>
     </nav>
   </div>
-  <div class="row">
-    <form class="" action="/messages/create" method="post">
-      {{csrf_field()}}
-      <div class="form-group">
-        <input type="text" name="message" class="form-control @if($errors->has('message')) is-invalid @endif" placeholder="que estas pensando">
-        @if ($errors->has('message'))
-          @foreach ($errors->get('message') as $error)
-            <div class="invalid-feedback">
-              {{$error}}
+  @if (Auth::check())
+    <div class="container-fluid">
+      <div class="row">
+        <form action="/messages/create" method="post">
+          {{csrf_field()}}
+          <div class="align-items-center">
+            <div class="col-auto">
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">Compartir </div>
             </div>
-          @endforeach
-        @endif
+            <input  name="message"  type="text" class="form-control @if($errors->has('message')) is-invalid @endif" id="inlineFormInputGroup" placeholder="Dejar un mensaje">
+          </div>
+        </div>
+            @if ($errors->has('message'))
+              @foreach ($errors->get('message') as $error)
+                <div class="invalid-feedback">
+                  {{$error}}
+                </div>
+              @endforeach
+            @endif
+          </div>
+          <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-2">Dejar mensaje</button>
+        </div>
+        </form>
       </div>
-    </form>
-  </div>
+    </div>
+  @endif
   <div class="row">
     @forelse ($messages as $message)
       <div class="col-6">

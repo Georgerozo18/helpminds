@@ -16,10 +16,14 @@ Route::get('/messages/{message}', 'MessagesController@show');
 Auth::routes();
 
 Route::post('/messages/create', 'MessagesController@create')->middleware('auth');
+
+Route::get('/{username}','UsersController@show');
 //
-// Route::get('/{username}','UsersController@show');
+Route::get('/{username}/follows', 'UsersController@follows');
+Route::get('/{username}/followers', 'UsersController@followers');
 //
-// Route::get('/{username}', 'UsersController@follows');
-//
-// Route::post('/{username}/follow', 'UsersController@follow')
-// ->middleware('auth');
+Route::post('/{username}/follow', 'UsersController@follow')
+->middleware('auth');
+
+Route::post('/{username}/unfollow', 'UsersController@unfollow')
+->middleware('auth');
