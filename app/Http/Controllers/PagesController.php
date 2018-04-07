@@ -13,7 +13,7 @@ class PagesController extends Controller
         ['messages' => $messages,]);
     }
 
-    public function acerca(){
-      return view('about');
+    public function ayuda(){
+      return view('help');
     }
 }

@@ -11,6 +11,7 @@
 |
 */
 Route::get('/','PagesController@inicio');
+Route::get('/ayuda','PagesController@ayuda');
 Route::get('/messages/{message}', 'MessagesController@show');
 
 Auth::routes();
