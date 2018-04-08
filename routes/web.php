@@ -16,15 +16,18 @@ Route::get('/messages/{message}', 'MessagesController@show');
 
 Auth::routes();
 
-Route::post('/messages/create', 'MessagesController@create')->middleware('auth');
+//middleware de auth
+Route::group(['middleware' => 'auth'], function () {
+  Route::post('/messages/create', 'MessagesController@create');
+  Route::post('/{username}/dms', 'UsersController@sendPrivateMessage');
+  Route::get('/conversations/{conversation}', 'UsersController@showConversation');
 
-Route::get('/{username}','UsersController@show');
-//
+  Route::post('/{username}/follow', 'UsersController@follow');
+  Route::post('/{username}/unfollow', 'UsersController@unfollow');
+});
+//middleware de auth
+
 Route::get('/{username}/follows', 'UsersController@follows');
 Route::get('/{username}/followers', 'UsersController@followers');
+Route::get('/{username}', 'UsersController@show');
 //
-Route::post('/{username}/follow', 'UsersController@follow')
-->middleware('auth');
-
-Route::post('/{username}/unfollow', 'UsersController@unfollow')
-->middleware('auth');
