@@ -12,7 +12,7 @@
     <title>Helpminds | Project</title>
 </head>
 <body>
-    <div id="app" class="container text-center">
+    <div id="app" class="container">
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <!-- Branding Image -->
