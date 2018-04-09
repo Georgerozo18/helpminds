@@ -25,7 +25,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <li class="nav-item">
+                          <form method="get" action="/messages">
+                            <div class="input-group">
+                              <input type="text" name="query" required class="form-control" placeholder="Buscar...">
+                              <span class="input-group-btn">
+                                <button type="submit" class="btn btn-outline-success">Buscar</button>
+                              </span>
+                            </div>
+                          </form>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
