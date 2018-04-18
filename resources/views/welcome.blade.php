@@ -17,6 +17,9 @@
           <li class="nav-item">
             <a href="/ayuda" class="nav-link">como funciona</a>
           </li>
+          <li class="nav-item">
+            <a href="/students" class="nav-link">Estudiantes</a>
+          </li>
         </ul>
 
       </div>
@@ -45,7 +48,7 @@
             @endif
           </div>
           <div class="form-group mb-2">
-            <input type="file" name="image" class="form-control-file">
+            <input type="file" name="image" class="form-control-file" required>
           </div>
           <div class="form-group mb-2">
             <div class="col-sm-10">

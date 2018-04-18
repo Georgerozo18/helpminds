@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Message;
+use App\Student;
 
 class PagesController extends Controller
 {
@@ -16,4 +17,11 @@ class PagesController extends Controller
     public function ayuda(){
       return view('help');
     }
+
+    // public function upnUsers(){
+    //   $students = Student::all();
+    //   return view('students',[
+    //     'students' => $students,
+    //   ]);
+    // }
 }

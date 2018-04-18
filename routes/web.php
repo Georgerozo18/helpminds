@@ -15,6 +15,8 @@ Auth::routes();
 
 Route::get('/','PagesController@inicio');
 Route::get('/ayuda','PagesController@ayuda');
+Route::get('/students','StudentsController@students');
+Route::get('/students/{student}','StudentsController@show');
 
 Route::get('/messages', 'MessagesController@search');
 Route::get('/messages/{message}', 'MessagesController@show');

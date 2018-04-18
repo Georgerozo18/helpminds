@@ -42,4 +42,8 @@ class User extends Authenticatable
     public function isFollowing(User $user){
       return $this->follows->contains($user);
     }
+
+    public function students(){
+      return $this->hasMany(Student::class)->orderBy('created_at','desc');
+    }
 }
