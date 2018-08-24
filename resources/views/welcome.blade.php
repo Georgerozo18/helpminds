@@ -15,7 +15,7 @@
             <a href="/" class="nav-link">Inicio</a>
           </li>
           <li class="nav-item">
-            <a href="/ayuda" class="nav-link">como funciona</a>
+            <a href="/diplomas" class="nav-link">Diplomas</a>
           </li>
           <li class="nav-item">
             <a href="/students" class="nav-link">Estudiantes</a>

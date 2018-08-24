@@ -14,14 +14,7 @@ class PagesController extends Controller
         ['messages' => $messages,]);
     }
 
-    public function ayuda(){
-      return view('help');
+    public function diplomas(){
+      return view('diplomas');
     }
-
-    // public function upnUsers(){
-    //   $students = Student::all();
-    //   return view('students',[
-    //     'students' => $students,
-    //   ]);
-    // }
 }

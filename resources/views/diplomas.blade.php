@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-          <p>Por definir!</p>
+          <p>Diplomas Encuentro Practica</p>
         </div>
     </div>
 </div>
