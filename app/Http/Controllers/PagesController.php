@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Message;
+use App\Student;
 
 class PagesController extends Controller
 {
@@ -13,7 +14,7 @@ class PagesController extends Controller
         ['messages' => $messages,]);
     }
 
-    public function ayuda(){
-      return view('help');
+    public function diplomas(){
+      return view('diplomas');
     }
 }

@@ -6,4 +6,5 @@
 </p>
 <div class="card-text text-muted float-right">
   {{$message->created_at}}
+  :V
 </div>
